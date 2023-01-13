@@ -7,19 +7,6 @@ import { FormOne } from "./components/FormOne";
 import { FormTwo } from "./components/FormTwo";
 
 function App() {
-  const { handleSubmit, register, control, setValue } = useForm({
-    defaultValues: {
-      test: "",
-      test2: "",
-      firstName: "asd",
-    },
-  });
-
-  const { dirtyFields } = useFormState({
-    control,
-  });
-
-  const onSubmit = (data: any) => alert(JSON.stringify(data));
   return (
     <div className="App">
       <h1>Form One</h1>
