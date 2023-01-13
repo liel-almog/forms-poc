@@ -3,6 +3,8 @@ import reactLogo from "./assets/react.svg";
 import "./App.css";
 import { useForm, useFormState } from "react-hook-form";
 import { Input, InputTwo } from "./components/Input";
+import { FormOne } from "./components/FormOne";
+import { FormTwo } from "./components/FormTwo";
 
 function App() {
   const { handleSubmit, register, control, setValue } = useForm({
@@ -20,14 +22,10 @@ function App() {
   const onSubmit = (data: any) => alert(JSON.stringify(data));
   return (
     <div className="App">
-      <h1>Form</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <input {...register("firstName")} placeholder="First Name" />
-        <Input register={register} name="test" />
-        <InputTwo setValue={setValue} register={register} name="test2" />
-        {dirtyFields.firstName && dirtyFields.test && <p>Field is dirty.</p>}
-        <input type="submit" />
-      </form>
+      <h1>Form One</h1>
+      <FormOne />
+      <h1>Form Two</h1>
+      <FormTwo />
     </div>
   );
 }
